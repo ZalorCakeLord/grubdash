@@ -56,7 +56,7 @@ function update(req, res, next) {
     const { data: { id, name, description, price, image_url } = {} } = req.body
     if (originalDishId === id || !id) {
         const updatedDish = {
-            id: dish.id,
+            id: dish.id,   //ensures preservation of id
             name,
             description,
             price,

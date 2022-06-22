@@ -88,7 +88,7 @@ function dataIdOrderIdMatchCheck(req, res, next) {
 function create(req, res, next) {
     const { data: { deliverTo, mobileNumber, status, dishes } = {} } = req.body
     const newOrderId = nextId()
-    const newOrder = {
+    const newOrder = {  
         id: newOrderId,
         deliverTo,
         mobileNumber,
@@ -108,7 +108,7 @@ function read(req, res, next) {
 function update(req, res, next) {
     const { data: { deliverTo, mobileNumber, status, dishes } = {} } = req.body
     const order = res.locals.order
-    const updatedOrder = {
+    const updatedOrder = {  //ensures id is preserved and can't be overwritten
         id: order.id,
         deliverTo,
         mobileNumber,
